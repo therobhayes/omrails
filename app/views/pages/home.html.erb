@@ -1,9 +1,10 @@
-<div class="hero-unit">
-<h1>Rob has made a homepage mofo's!</h1>
-<p>Here is a link to 
-	<%= link_to "ESPN", "http://espn.go.com" %>
-</p>
-<p>
-	<%= link_to "Sign up now!", "#", class: "btn btn-primary btn-large" %>
-
-</div>
+<% if user_signed_in? %>
+	<h1>You're logged into this website!</h1>
+<% else %>
+	<div class="hero-unit">
+		<h1>Fetch - Train your dog to be awesome.</h1>
+		<h2>10-minute games you can play daily with your dog to help it quickly learn new behaviours and tricks.</h2>
+		<p><br>
+			<%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
+	</div>
+<% end %>
